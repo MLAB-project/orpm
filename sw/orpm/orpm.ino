@@ -179,7 +179,7 @@ void setup()
   digitalWrite(LED_red, LOW);          
 }
 
-#define WORDTIME  500
+#define WORDTIME  200
 #define BYTETIME  20
 
 void loop()
@@ -190,8 +190,7 @@ void loop()
   while(true)
   {
     uint16_t loops = 0;
-    while(!(PINC& 0b00010000))  to nelita
-    
+    while(!(PINC& 0b00010000))
     {
       loops++;
     }
@@ -201,6 +200,7 @@ void loop()
   //PORTC = 0b00100000;  
   //PORTC = 0b00000000;  
 
+  // Preamble 
   number = 0;
   while(true)
   {
@@ -217,6 +217,7 @@ void loop()
   uint8_t start = 10 - number;
   while(!(PINC& 0b00010000));
 
+  // 4th byte
   number = 0;
   while(true)
   {
@@ -232,7 +233,8 @@ void loop()
   }  
   uint8_t n1000 = 10 - number;
   while(!(PINC& 0b00010000));
-  
+
+  // 3rd byte
   number = 0;
   while(true)
   {
@@ -249,6 +251,7 @@ void loop()
   uint8_t n100 = 10 - number;
   while(!(PINC& 0b00010000));
 
+  // 2nd byte
   number = 0;
   while(true)
   {
@@ -265,6 +268,7 @@ void loop()
   uint8_t n10 = 10 - number;
   while(!(PINC& 0b00010000));
 
+  // 1st byte
   number = 0;
   while(true)
   {
