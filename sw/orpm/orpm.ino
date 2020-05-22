@@ -179,7 +179,7 @@ void setup()
   digitalWrite(LED_red, LOW);          
 }
 
-#define WORDTIME  200
+#define WORDTIME  300
 #define BYTETIME  20
 
 void loop()
@@ -214,7 +214,7 @@ void loop()
     number++;
     if(loops > BYTETIME) break;
   }  
-  uint8_t start = 10 - number;
+  if(number!=12) return;
   while(!(PINC& 0b00010000));
 
   // 4th byte
